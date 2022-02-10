@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
     <title>Signup Form</title>
   </head>
   <body>
@@ -14,7 +15,14 @@
           <img src="./images/odin-lined.png" alt="odin-logo" />
           <h1>ODIN</h1>
         </div>
-        <p>Photo by <a href="#">Hallie West</a> on <a href="#">Unsplash</a></p>
+        <p>
+          Photo by
+          <a href="https://unsplash.com/@haliewestphoto" target="_blank"
+            >Hallie West</a
+          >
+          on
+          <a href="https://unsplash.com/" target="_blank">Unsplash</a>
+        </p>
       </div>
       <div class="right">
         <p>
@@ -29,35 +37,50 @@
             <p>Let's do this!</p>
             <div class="user-details">
               <p>
-                <label for="first-name">FIRST NAME</label>
-                <input type="text" name="first-name" id="first-name" />
+                <label for="first-name">FIRST NAME*</label>
+                <input type="text" name="first-name" id="first-name" required />
               </p>
               <p>
                 <label for="last-name">LAST NAME</label>
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  class="focus"
-                />
+                <input type="text" name="last-name" id="last-name" />
               </p>
               <p>
-                <label for="email">EMAIL</label>
-                <input type="email" name="email" id="email" />
+                <label for="email">EMAIL*</label>
+                <input type="email" name="email" id="email" required />
               </p>
               <p>
                 <label for="number">PHONE NUMBER</label>
-                <input type="tel" name="number" id="number" />
+                <input
+                  type="tel"
+                  pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
+                  name="number"
+                  id="number"
+                  minlength="10"
+                  maxlength="12"
+                />
               </p>
               <p>
-                <label for="pwd">PASSWORD</label>
-                <input type="password" name="pwd" id="pwd" class="error" />
+                <label for="pwd">PASSWORD*</label>
+                <input
+                  type="password"
+                  name="pwd"
+                  id="pwd"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                  required
+                />
               </p>
               <p>
                 <label for="pwd2">CONFIRM PASSWORD</label>
-                <input type="password" name="pwd2" id="pwd2" class="error" />
+                <input
+                  type="password"
+                  name="pwd2"
+                  id="pwd2"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                  required
+                />
               </p>
             </div>
+            <p class="error-msg"></p>
           </div>
           <button type="submit">Create Account</button>
         </form>
