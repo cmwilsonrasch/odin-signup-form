@@ -6,7 +6,7 @@
 
 body {
   background: rgb(250, 250, 250);
-  font-family: sans-serif;
+  font-family: 'poppins', sans-serif;
 }
 
 a {
@@ -32,15 +32,12 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 40vw;
-}
-
-.left p {
-  margin: 10px;
 }
 
 .logo {
@@ -53,7 +50,6 @@ img {
   align-items: center;
   gap: 1vw;
   width: 100%;
-  padding: 10px 0;
 }
 
 .logo h1 {
@@ -63,17 +59,58 @@ img {
 
 .right {
   width: 60vw;
+  margin: 15vh 0 0 30px;
+}
+
+.right > p:nth-child(1),
+.right > p:nth-child(3) {
+  font-weight: 500;
 }
 
 .form-field {
   background: #fff;
   border: none;
   box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  margin: 25px 0 30px -30px;
 }
 
-.form-field p {
+.form-field > p {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.user-details {
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 10vw;
+}
+
+.user-details p {
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  width: calc(100% / 2 - 20px);
+}
+
+.user-details p label {
+  font-weight: 500;
+}
+
+.user-details p input {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  height: 24px;
+  width: 100%;
+  margin: 3px 0 10px 0;
+}
+
+.user-details p input:focus {
+  box-shadow: 6px 6px 6px -6px rgba(0, 0, 0, 0.4);
+}
+
+.error {
+  border: 1px solid red;
 }
 
 button {
@@ -83,6 +120,7 @@ button {
   box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.4);
   color: #fff;
   padding: 10px 30px;
+  margin-bottom: 20px;
 }
 
 .right a {
